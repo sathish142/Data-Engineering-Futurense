@@ -12,7 +12,7 @@ def load_data_to_s3(dataframe, output_directory):
         # LOCAL SAVE FILE
         output_path = "/home/sathish/project/output/"
     # LOAD DATAFRAME AS CSV FILE IN S3 WITH OVERWRITE METHOD
-    dataframe.write.format('csv').mode('overwrite').save(output_path + output_directory)
+    dataframe.write.format('csv').option('header', 'true').mode('overwrite').save(output_path + output_directory)
 
 
 def restaurant_type_similar(dataframe):
